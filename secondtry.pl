@@ -13,7 +13,7 @@ key(2,5,6).
 connected(X,Y) :- edge(X,Y) ; edge(Y,X).
 
 connected_by_key(X,Y,Visited):-
-        (key(K, X, Y); key(K, Y, Z)).
+        (key(K, X, Y); key(K, Y, Z)),
         member(K,Visited), !.
 
 
