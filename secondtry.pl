@@ -28,8 +28,3 @@ travel(A,B,Visited,Path) :-
        C \== B,
        \+member(C,Visited),
        travel(C,B,[C|Visited],Path).
-	   
-shortest(A,B,Path,Length) :-
-   setof([P,L],path(A,B,P,L),Set),
-   Set = [_|_], % fail if no path 
-   minimal(Set,[Path,Length]).
