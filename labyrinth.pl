@@ -85,9 +85,10 @@ currentPos(agent, room0).
 currentPos(guard1, room5).
 
 %function to move arond
-move(X, Y, Z) :- room(X), door(Y), room(Z), connected(Z, Y).
+%move(X, Y, Z) :- room(X), door(Y), room(Z), connected(Z, Y).
 
-giveafuck(X,Z) :- connected(X,Y), connected(Z,Y).
+giveafuck(X,Z) :- connected(X,Y); connected(Z,Y).
+giveafuck(X,X).
 
 
 
