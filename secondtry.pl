@@ -81,18 +81,17 @@ walk(X,Y,Roomlist,Path) :-
        walk(Z,Y,[Z|Roomlist],Path).
 	   
 %here we can calculate the shortest path by counting the elements in the list and return it
-%some kind of buggie because it loops infinit
-%shortestPath(X, Y, Z) :-
-%	length(L, N), 
-%	way(X, Y, L),
-%	append(L,N,Z).
+shortestPath(X, Y, L, N) :-
+	length(L, N), 
+	way(X, Y, L),!.
+	%append(L,N,Z),!.
 
 
 /**
 * 
-*	Code to run
-*	way(start,end,L), length(L,N)
-*
+*	Code to run:
+*		way(start,end,L), length(L,N)
+*		shortestPath(start, end, S, L).
 *
 */
 	
