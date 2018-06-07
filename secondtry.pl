@@ -54,6 +54,11 @@ door(room18,room19).
 door(room19,room20).
 door(room20, room21).
 
+%guard can be on one of those rooms:
+%L = [1,2,3], random_member(A, L).
+police([room11,room8,room12,room10]).
+getPolList(X) :- police(Y), random_member(X, Y).
+
 
 % with a bomb you can blow up a wall between two rooms
 % the bomb is located in room2 and with her you can open the way between room10 and room21
@@ -85,14 +90,61 @@ shortestPath(X, Y, L, N) :-
 	length(L, N), 
 	way(X, Y, L),!.
 	%append(L,N,Z),!.
+	
+%check if police is in the list
+%member2(X, [Y|T]) :- X = Y; member(X, T),!
+%threeorfor(X,Y):- member(Y,X).
+%member(a,[a,b,c]).
+printtext1 :-
+	write('The police caught you!').
+printtext2 :-
+	write('You have found a way to escape!').
+
+isMember(Policepos, Waylist) :-
+	member(Policepos, Waylist).
+	
+%here runs the main code
+main(Waylist, Policepos, Cost):-
+	getPolList(Policepos),
+	shortestPath(start, end, Waylist, Cost),
+	\+isMember(Policepos, Waylist),
+	printtext2,!.
+main(Waylist, Policepos, Cost):-	
+	getPolList(Policepos),
+	shortestPath(start, end, Waylist, Cost),
+	isMember(Policepos, Waylist),
+	printtext1.
+	
+	
+	
+	
+	
+	
+	%( isMember(Policepos, Waylist) = true ->  
+	%	write('phone found in your search area')
+	%	; isMember(Policepos, Waylist) = false -> 
+	%	write('phone not found!')
+	%).
+	
+	
+	
+	%isMember(Policepos, Waylist).
+	%(member(Policepos, Waylist) -> write('bubux'));
+	%(member(Policepos, Waylist) = true -> write('babax')).
+	%write('you fucked up').
+	%-> write('bubux') ; printtext ).
+	%\+ member(Policepos, Waylist);
+	%printtext.
+	%way(start, end, Waylist).
+	
+	
 
 
 /**
 * 
 *	Code to run:
+*		main(Waylist, Policepos, Cost).
 *		way(start,end,L), length(L,N)
 *		shortestPath(start, end, S, L).
 *
 */
-	
-	   
