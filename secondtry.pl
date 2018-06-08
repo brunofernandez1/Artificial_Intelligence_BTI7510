@@ -1,17 +1,18 @@
 /**
-* Prolog project by B. Fernandez and Claudio Polo I3p
+* Prolog project by B. Fernandez and Claudio Polo /// I3p
 * 
 * Some help from:
 * 	http://tcl.sfs.uni-tuebingen.de/~cornell/prolog/Graphs003.html
 *	https://www.cpp.edu/~jrfisher/www/prolog_tutorial/2_15.html
 *
+*	%%%%	-> wall to explode
+*	#		-> bomb to collect
 *
 *
-*
-*
-*
+*	--- Map to traverse ---
+*	
 *	+--------+--------+--------+--------+--------+
-*	| START    Room2    Room3    Room24   Room4  |
+*	| START    Room2 #  Room3    Room24   Room4  |
 *	+--------+--------+--------+--------+--    --+
 *	| Room5  |                          | Room6  |
 *	+--    --+--------+--------+--------+--    --+
@@ -25,6 +26,15 @@
 *			 +--    --+--    --+--------+--    --+
 *			 | Room16 | Room17   Room18   Room19 |
 *			 +--------+--------+--------+--------+
+*
+*	The idea of this project is to find a way from room x to room y.
+*	Problems to solve ->
+*						-the rooms are bi-directed graphs -> problem of looping
+*						-police officer appears randomly in room8, room10, room11 or room12
+*						-there is a bomb that can explode a wall (%%%%)
+*
+*
+*
 */
 
 % rooms that are connected to each other by doors
@@ -67,11 +77,13 @@ blowwall(X,Y,Roomlist):-
         (bomb(B, X, Y); bomb(B, Y, X)),
         member(B,Roomlist), !.
 
-
+% find all possible ways from X to Y and return them
 way(X,Y,Waylist) :-
        walk(X,Y,[X],Z), 
        reverse(Z,Waylist).
 
+% walk through the map recursive
+% this is a depth first search
 walk(X,Y,Roomlist,[Y|Roomlist]) :- 
        (connected(X,Y);blowwall(X,Y,Roomlist)) .
 walk(X,Y,Roomlist,Path) :-
