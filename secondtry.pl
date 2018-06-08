@@ -103,10 +103,7 @@ shortestPath(X, Y, L, N) :-
 	way(X, Y, L),!.
 	%append(L,N,Z),!.
 	
-%check if police is in the list
-%member2(X, [Y|T]) :- X = Y; member(X, T),!
-%threeorfor(X,Y):- member(Y,X).
-%member(a,[a,b,c]).
+
 printtext1 :-
 	write('The police caught you!').
 printtext2 :-
@@ -116,6 +113,7 @@ isMember(Policepos, Waylist) :-
 	member(Policepos, Waylist).
 	
 %here runs the main code
+%depending on the result you recieve the one or the other message
 main(Waylist, Policepos, Cost):-
 	getPolList(Policepos),
 	shortestPath(start, end, Waylist, Cost),
@@ -127,31 +125,6 @@ main(Waylist, Policepos, Cost):-
 	isMember(Policepos, Waylist),
 	printtext1.
 	
-	
-	
-	
-	
-	
-	%( isMember(Policepos, Waylist) = true ->  
-	%	write('phone found in your search area')
-	%	; isMember(Policepos, Waylist) = false -> 
-	%	write('phone not found!')
-	%).
-	
-	
-	
-	%isMember(Policepos, Waylist).
-	%(member(Policepos, Waylist) -> write('bubux'));
-	%(member(Policepos, Waylist) = true -> write('babax')).
-	%write('you fucked up').
-	%-> write('bubux') ; printtext ).
-	%\+ member(Policepos, Waylist);
-	%printtext.
-	%way(start, end, Waylist).
-	
-	
-
-
 /**
 * 
 *	Code to run:
@@ -160,3 +133,24 @@ main(Waylist, Policepos, Cost):-
 *		shortestPath(start, end, S, L).
 *
 */
+
+
+
+%% commented code, just for history purpose
+%( isMember(Policepos, Waylist) = true ->  
+%	write('phone found in your search area')
+%	; isMember(Policepos, Waylist) = false -> 
+%	write('phone not found!')
+%).
+%isMember(Policepos, Waylist).
+%(member(Policepos, Waylist) -> write('bubux'));
+%(member(Policepos, Waylist) = true -> write('babax')).
+%write('you fucked up').
+%-> write('bubux') ; printtext ).
+%\+ member(Policepos, Waylist);
+%printtext.
+%way(start, end, Waylist).
+%check if police is in the list
+%member2(X, [Y|T]) :- X = Y; member(X, T),!
+%threeorfor(X,Y):- member(Y,X).
+%member(a,[a,b,c]).
