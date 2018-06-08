@@ -1,5 +1,8 @@
 # Artificial_Intelligence_BTI7510
-Prolog project for school
+Prolog project for BFH TI Artifical Intelligence
+
+From Bruno Fernandez & Claudio Polo
+
 # About
 The idea of this project is to find a way from room x to room y.
 Problems to solve ->
