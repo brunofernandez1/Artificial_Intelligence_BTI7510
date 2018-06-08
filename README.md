@@ -1,5 +1,5 @@
 # Artificial_Intelligence_BTI7510
-Prolog project for BFH TI Artifical Intelligence
+Prolog project for BFH TI "Artifical Intelligence", BTI7510
 
 From Bruno Fernandez & Claudio Polo
 
