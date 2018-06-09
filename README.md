@@ -33,8 +33,9 @@ Some help from:
 	 | Room16 | Room17   Room18   Room19 |
 	 +--------+--------+--------+--------+
 
-	%%%%	-> wall to explode
-	#	-> bomb to collected
+	%%%%				-> wall to explode
+	#				-> bomb to collected
+	room8, room10, room11, room12	-> possible rooms the police officer can be located
 
 ```
 
