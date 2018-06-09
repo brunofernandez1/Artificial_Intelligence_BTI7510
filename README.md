@@ -15,9 +15,7 @@ Some help from:
 - https://www.cpp.edu/~jrfisher/www/prolog_tutorial/2_15.html
 
 	+--------+--------+--------+--------+--------+
-	
 	| START    Room2 #  Room3    Room24   Room4  |
-	
 	+--------+--------+--------+--------+--    --+
 	| Room5  |                          | Room6  |
 	+--    --+--------+--------+--------+--    --+
