@@ -53,3 +53,29 @@ Then it will return the shortest path with the following informations
 - Depending on whether the figure is caught or not, you will recieve one of those messages to the console:
 	- You have found a way to escape!
 	- The police caught you!
+	
+Here are two examples:
+```
+?- main(Waylist, Policepos, Cost).
+You have found a way to escape!
+Waylist = [start,room2,room3,room24,room4,room6,room8,room10,room21,room20,room19,room18,room17,end],
+Policepos = room12,
+Cost = 14.
+```
+```
+?- main(Waylist, Policepos, Cost).
+The police caught you!
+Waylist = [start,room2,room3,room24,room4,room6,room8,room10,room21,room20,room19,room18,room17,end],
+Policepos = room10,
+Cost = 14
+```
+
+Hint: to see the whole list, run the following command on the console
+```
+set_prolog_flag(answer_write_options,[max_depth(100)]).
+```
+
+## Known errors
+Those errors/problems will be resolved in a later release
+- Some times it just returns a false message and it can't find any way to the end room
+- extend the code to find another way if the police officer is blocking the path
