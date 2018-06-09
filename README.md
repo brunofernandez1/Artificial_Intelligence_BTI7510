@@ -3,7 +3,7 @@ Prolog project for BFH TI "Artifical Intelligence", BTI7510
 
 From Bruno Fernandez & Claudio Polo
 
-# About
+## About
 The idea of this project is to find a way from room x to room y.
 Problems to solve ->
 - the maze and rooms are bi-directed graphs -> problem of looping
@@ -13,6 +13,8 @@ Problems to solve ->
 Some help from:
 - http://tcl.sfs.uni-tuebingen.de/~cornell/prolog/Graphs003.html
 - https://www.cpp.edu/~jrfisher/www/prolog_tutorial/2_15.html
+
+## Labyrinth
 
 ```
 +--------+--------+--------+--------+--------+
@@ -30,4 +32,18 @@ Some help from:
 	 +--    --+--    --+--------+--    --+
 	 | Room16 | Room17   Room18   Room19 |
 	 +--------+--------+--------+--------+
+
+	%%%%	-> wall to explode
+	#	-> bomb to collected
+
 ```
+
+## How to run
+
+To run the code please start the following main method with e start room and an end room.
+For example:
+```
+main(start, end, Cost)
+```
+
+Then it will return the following informations
