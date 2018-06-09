@@ -40,10 +40,16 @@ Some help from:
 
 ## How to run
 
-To run the code please start the following main method with e start room and an end room.
+To run the code please start the following main method with 3 variables.
 For example:
 ```
-main(start, end, Cost)
+main(Waylist, Policepos, Cost)
 ```
 
-Then it will return the following informations
+Then it will return the shortest path with the following informations
+- Waylist: the list  of the shortestpath
+- Policepos: random position of the police officer
+- Cost: how much hops you needed to reach the end
+- Depending on whether the figure is caught or not, you will recieve one of those messages to the console:
+	- You have found a way to escape!
+	- The police caught you!
