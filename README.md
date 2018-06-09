@@ -14,6 +14,7 @@ Some help from:
 - http://tcl.sfs.uni-tuebingen.de/~cornell/prolog/Graphs003.html
 - https://www.cpp.edu/~jrfisher/www/prolog_tutorial/2_15.html
 
+```
 +--------+--------+--------+--------+--------+
 | START    Room2 #  Room3    Room24   Room4  |
 +--------+--------+--------+--------+--    --+
@@ -29,3 +30,4 @@ Some help from:
 	 +--    --+--    --+--------+--    --+
 	 | Room16 | Room17   Room18   Room19 |
 	 +--------+--------+--------+--------+
+```
