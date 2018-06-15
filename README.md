@@ -7,6 +7,7 @@ by Bruno Fernandez & Claudio Polo
 The idea of this project is to find a way from room x to room y.
 Problems to solve ->
 - the maze and rooms are bi-directed graphs -> problem of looping
+- return only the shortest way
 - police officer appears randomly in room8, room10, room11 or room12
 - there is a bomb that can explode a wall (%%%%)
 
