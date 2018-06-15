@@ -77,6 +77,7 @@ set_prolog_flag(answer_write_options,[max_depth(100)]).
 ```
 
 ## Some explanations for the code
+### Rooms
 A door connects two rooms. So this is the logical fact or relationship of both rooms.
 Here an example for the first room:
 ```
@@ -88,7 +89,54 @@ With this rule, we bypassed the long list of creating both relations:
 connected(X,Y) :- door(X,Y) ; door(Y,X).
 ```
 
+### Ways and walk
+To find all possible ways, we use a recursive depth first search function.
+As iput
+```
+way(X,Y,Waylist) :-
+       walk(X,Y,[X],Z), 
+       reverse(Z,Waylist).
+walk(X,Y,Roomlist,[Y|Roomlist]) :- 
+       (connected(X,Y);blowwall(X,Y,Roomlist)) .
+walk(X,Y,Roomlist,Path) :-
+       (connected(X,Z);blowwall(X,Z,Roomlist)),           
+       Z \== Y,
+       \+member(Z,Roomlist),
+       walk(Z,Y,[Z|Roomlist],Path).
+```
+As we only want the shortest path, we return only the path with the smallest number of rooms (hops):
+```
+shortestPath(X, Y, L, N) :-
+	length(L, N), 
+	way(X, Y, L),!.
+```
+### Bomb
+The bomb rule works as follow:
+- X is the room where the bomb is located
+- Y and Z are the rooms whitch can be conneted if you explode the wall with a bomb
+```
+bomb(X,Y,Z).
+```
+
+Now if you have passed the room where the bomb was located and you reach the room where you can explode the wall, the new room will be added do the possible rooms.
+```
+blowwall(X,Y,Roomlist):-
+        (bomb(B, X, Y); bomb(B, Y, X)),
+        member(B,Roomlist), !.
+```
+
+### Police
+The police rule defines a list of possible rooms where the police officer can be locaded:
+```
+police([room11,room8,room12,room10]).
+```
+Now, each time you start the main code, the police is randomly set in on those rooms
+```
+getPolList(X) :- police(Y), random_member(X, Y).
+```
+
 ## Known errors
-Those errors/problems will be resolved in a later release
-- Some times it just returns a false message and it can't find any way to the end room
+Those errors/problems are known and will be resolved in a later release
+- Some times it just returns a false message and it can't find any way to the end room. No idea why
+- If we have found multiple ways with the same path lenght, it just returns the first one.
 - extend the code to find another way if the police officer is blocking the path
