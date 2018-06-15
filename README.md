@@ -77,10 +77,15 @@ set_prolog_flag(answer_write_options,[max_depth(100)]).
 ```
 
 ## Some explanations for the code
-A door connects two rooms together. So this is the logical fact or relationship of both rooms.
+A door connects two rooms. So this is the logical fact or relationship of both rooms.
 Here an example for the first room:
 ```
 door(start,room2).
+```
+If room A is connected with room B, then room B also connected with room A. 
+With this rule, we bypassed the long list of creating both relations:
+```
+connected(X,Y) :- door(X,Y) ; door(Y,X).
 ```
 
 ## Known errors
