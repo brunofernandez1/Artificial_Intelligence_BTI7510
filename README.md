@@ -1,7 +1,10 @@
-# Artificial_Intelligence_BTI7510
+# Artificial Intelligence BTI7510 BFH TI Bern
 Prolog project for BFH TI "Artifical Intelligence", BTI7510
-
 by Bruno Fernandez & Claudio Polo
+Date: 15.06.2018
+
+![maze](./SRC/simple-maze.jpg | width=100)
+
 
 ## About
 The idea of this project is to find a way from room x to room y.
