@@ -32,7 +32,7 @@ door(room18,room19).
 door(room19,room20).
 door(room20, room21).
 
-%guard can be on one of those rooms:
+%police officer can be on one of those rooms:
 police([room11,room8,room12,room10]).
 getPolList(X) :- police(Y), random_member(X, Y).
 
@@ -68,7 +68,6 @@ walk(X,Y,Roomlist,Path) :-
 shortestPath(X, Y, L, N) :-
 	length(L, N), 
 	way(X, Y, L),!.
-	%append(L,N,Z),!.
 	
 
 printtext1 :-
