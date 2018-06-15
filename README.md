@@ -154,7 +154,7 @@ But as soon as you start with prolog rules, it quickly becomes difficult. Especi
 
 We spend a lot of time with the traversing of the rooms. At first we had the problem that the traversing program ended up in an infinite loop and finally crashed.
 After finding out that the rooms are actually a directed graph, we skipeed the rooms that have already been visited. To realize this in prologue was more difficult than expected.
-![directed cyclic graph](https://eisbox.net/wp-uploads/2009/03/directed-cyclic-graph-425x318.png)
+![directed cyclic graph](./SRC/directed-cyclic-graph-425x318.png)
 
 In one of the linked URLs, our problem was explained in detail and we could implement it with their help.
 
