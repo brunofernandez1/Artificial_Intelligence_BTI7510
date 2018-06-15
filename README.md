@@ -141,3 +141,22 @@ Those errors/problems are known and will be resolved in a later release
 - Some times it just returns a false message and it can't find any way to the end room. No idea why
 - If we have found multiple ways with the same path lenght, it just returns the first one.
 - extend the code to find another way if the police officer is blocking the path
+
+## Personal review
+In this project we worked for the first time with a "logical programming language" like Prolog.
+
+
+Wir haben in diesem Projekt das erste Mal mit einer "logischen Programmiersprache" wie Prolog gearbeitet.
+Dabei ist uns aufgefallen , dass man das Knowhow der Proceduralen Entwicklung hinter sich lassen muss und man komplett neu umdenken muss. Es braucht am Anfang sehr viel Umdenken damit man mit dieser Sprache umgehen kann. 
+
+Solange man nur mit prolog facts arbeitet, ist es noch einfach überschaubar.
+Sobald man aber mit prolog rules beginnt, wird es schnell schwierig. Vor allem wenn man, wie wir, gewisse Dinge mit Rekursion lösen muss, wird es sehr schnell unüberschaubar.
+
+Wir haben mit der Traversierung der Räume sehr viel Zeit gebraucht. Zuerst hatten wir das Problem, dass bei der Traversierung das Programm in einem unendlichen loop landete und schlussendlich abstürzte.
+Nachdem wir festgestellt hatten, dass die Räume eigentlich ein gerichteter Graph ist, habne wir Räume die bereits besucht worden sind, nicht mehr dursucht. Dies in prolog abzubilden war aber schwieriger als gedacht.
+
+In einem der verlinkten URLs, wurde das ganze auch nochmal detailiert erklären und wir konnten es mit deren Hilfe umsetzen.
+
+Die restlichen Funktionen waren um einiges einfacher umzusetzen und schnell realisiert.
+Wir haben jedoch beide gemerkt, dass dies nicht unsere lieblingsart zum Pogrammieren ist und werden künftig wohl eine grossen Bogen um Prolog machen.
+
