@@ -3,7 +3,7 @@ Prolog project for BFH TI "Artifical Intelligence", BTI7510
 by Bruno Fernandez & Claudio Polo
 Date: 15.06.2018
 
-![maze](./SRC/simple-maze.jpg | width=100)
+![maze](./SRC/simple-maze.jpg)
 
 
 ## About
