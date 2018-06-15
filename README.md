@@ -144,19 +144,15 @@ Those errors/problems are known and will be resolved in a later release
 
 ## Personal review
 In this project we worked for the first time with a "logical programming language" like Prolog.
+We noticed that you have to leave behind the know how of the procedural development and you have to change your approach how to solve the problem. It takes a lot of rethinking in the beginning to handle this language.
 
+As long as you only work with prolog facts, it is still manageable.
+But as soon as you start with prolog rules, it quickly becomes difficult. Especially if you have to solve certain problem with recursion, it quickly becomes unmanageable.
 
-Wir haben in diesem Projekt das erste Mal mit einer "logischen Programmiersprache" wie Prolog gearbeitet.
-Dabei ist uns aufgefallen , dass man das Knowhow der Proceduralen Entwicklung hinter sich lassen muss und man komplett neu umdenken muss. Es braucht am Anfang sehr viel Umdenken damit man mit dieser Sprache umgehen kann. 
+We spend a lot of time with the traversing of the rooms. At first we had the problem that the traversing program ended up in an infinite loop and finally crashed.
+After finding out that the rooms are actually a directed graph, we skipeed the rooms that have already been visited. To realize this in prologue was more difficult than expected.
 
-Solange man nur mit prolog facts arbeitet, ist es noch einfach überschaubar.
-Sobald man aber mit prolog rules beginnt, wird es schnell schwierig. Vor allem wenn man, wie wir, gewisse Dinge mit Rekursion lösen muss, wird es sehr schnell unüberschaubar.
+In one of the linked URLs, our problem was explained in detail and we could implement it with their help.
 
-Wir haben mit der Traversierung der Räume sehr viel Zeit gebraucht. Zuerst hatten wir das Problem, dass bei der Traversierung das Programm in einem unendlichen loop landete und schlussendlich abstürzte.
-Nachdem wir festgestellt hatten, dass die Räume eigentlich ein gerichteter Graph ist, habne wir Räume die bereits besucht worden sind, nicht mehr dursucht. Dies in prolog abzubilden war aber schwieriger als gedacht.
-
-In einem der verlinkten URLs, wurde das ganze auch nochmal detailiert erklären und wir konnten es mit deren Hilfe umsetzen.
-
-Die restlichen Funktionen waren um einiges einfacher umzusetzen und schnell realisiert.
-Wir haben jedoch beide gemerkt, dass dies nicht unsere lieblingsart zum Pogrammieren ist und werden künftig wohl eine grossen Bogen um Prolog machen.
-
+The remaining functions were a lot easier to implement and fast realized.
+However, we have both noticed that this is not our favorite way to program and will probably make a big bow to Prologue in the future.
