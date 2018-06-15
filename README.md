@@ -28,7 +28,7 @@ Some help from:
 +--    --+--------+	   +--------+--%%%%--+
 | Room13   Room14 |                 | Room21 |
 +--------+--    --+--------+        +--    --+
-	 | Room15   End    |        | Room20 |
+	 | Room15     End  |        | Room20 |
 	 +--    --+--    --+--------+--    --+
 	 | Room16 | Room17   Room18   Room19 |
 	 +--------+--------+--------+--------+
@@ -74,6 +74,13 @@ Cost = 14
 Hint: to see the whole list, run the following command on the console
 ```
 set_prolog_flag(answer_write_options,[max_depth(100)]).
+```
+
+## Some explanations for the code
+A door connects two rooms together. So this is the logical fact or relationship of both rooms.
+Here an example for the first room:
+```
+door(start,room2).
 ```
 
 ## Known errors
